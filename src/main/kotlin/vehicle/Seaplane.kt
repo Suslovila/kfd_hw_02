@@ -1,5 +1,9 @@
 package vehicle
 
+import api.AbstractTransport
+import api.IFlyable
+import api.ISwimmable
+
 class Seaplane(val mode : Mode) : AbstractTransport(), IFlyable, ISwimmable {
 
     override fun travel() = when(mode) {

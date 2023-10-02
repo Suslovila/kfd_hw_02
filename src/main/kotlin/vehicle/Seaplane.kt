@@ -1,22 +1,8 @@
 package vehicle
 
-import api.AbstractTransport
-import api.IFlyable
-import api.ISwimmable
-
-class Seaplane(val mode : Mode) : AbstractTransport(), IFlyable, ISwimmable {
-
-    override fun travel() = when(mode) {
-            Mode.FLY -> fly()
-            Mode.SWIM -> swim()
-        }
-
-    override fun swim() = println("Seaplane is swimming!")
+import api.*
+//by default has electric engine, but  you can change it if needed
+class Seaplane(engine : Engine = ElectricEngine(100), override val maxSpeed: Double) : MechanicalTransport(engine), IFlyable, ISwimmable {
 
 
-    override fun fly() = println("Seaplane is flying!")
-
-    enum class Mode{
-        FLY, SWIM
-    }
 }

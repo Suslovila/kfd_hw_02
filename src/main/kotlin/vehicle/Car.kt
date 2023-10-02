@@ -1,11 +1,10 @@
 package vehicle
 
-import api.AbstractTransport
+import api.Engine
 import api.ILand
+import api.InternalCombustionEngine
+import api.MechanicalTransport
 
-class Car : AbstractTransport(), ILand {
-    override fun travel() = drive()
-
-    override fun drive() = println("Car is going!!!!")
+class Car(override val maxSpeed: Double) : MechanicalTransport(InternalCombustionEngine(10)), ILand {
 
 }

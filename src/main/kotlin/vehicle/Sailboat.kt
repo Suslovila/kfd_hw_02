@@ -1,12 +1,9 @@
 package vehicle
 
 import api.AbstractTransport
+import api.ArtificialTransport
 import api.ISwimmable
 
-class Sailboat : AbstractTransport(), ISwimmable {
-    override fun travel() = swim()
-
-
-    override fun swim() = println("Sailboat is swimming")
+class Sailboat(override val maxSpeed: Double) : ArtificialTransport(), ISwimmable {
 
 }
